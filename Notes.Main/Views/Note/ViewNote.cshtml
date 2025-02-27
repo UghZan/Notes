@@ -1,0 +1,15 @@
+﻿@model GetNoteModel
+@{
+    ViewBag.Title = "Просмотр";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="column" style="justify-content: center;">
+            <p class="view-title">@Model.Name</p>
+            <p class="view-author">by @Model.AuthorName (@Model.CreateDate.ToString("g"))</p>
+            <div class="view-div"><p>@Model.Content</p></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+﻿@model List<GetNoteModel>
+@{
+    ViewBag.Title = "Главная страница";
+    Layout = "/Views/Shared/_Layout.cshtml";
+    bool isAuth = (bool?)ViewData["IsAuth"] ?? false;
+}
+<!DOCTYPE html>
+<html>
+<body>
+        @if(!isAuth)
+        {
+                <p>Добро пожаловать в мегаредактор заметок 2.0! Чтобы начать работу, @Html.ActionLink("зарегистрируйтесь", "register") или @Html.ActionLink("войдите", "login").</p>
+    }
+    <h1>Заметки пользователей</h1>
+    <div class="notes-container">
+        @foreach (GetNoteModel getNoteModel in Model)
+        {
+            await Html.RenderPartialAsync("NoteView", getNoteModel);
+        }
+    </div>
+    </body>
+</html>

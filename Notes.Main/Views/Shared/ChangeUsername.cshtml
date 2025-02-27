@@ -1,0 +1,16 @@
+﻿@model ChangeUserNameModel
+ <div>
+    @if (TempData["ChangeNameError"] is not null)
+    {
+                    <p class="error">@TempData["ChangeNameError"]</p>
+    }
+    <p class="note-title">Смена имени пользователя</p>
+    @using (Html.BeginForm("ChangeUsername", "User", FormMethod.Post))
+    {
+            <p>@Html.ValidationMessageFor(m => m.NewUserName, "", new { @class = "error" })</p>
+            <p>Новое имя пользователя: @Html.TextBoxFor(m => m.NewUserName, "", new { type = "text" })</p>
+            <p>@Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })</p>
+            <p>Текущий пароль: @Html.PasswordFor(m => m.Password, "")</p>
+            <input type="submit" value="Сменить имя пользователя" />
+    }
+ </div>

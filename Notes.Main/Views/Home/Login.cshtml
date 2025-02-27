@@ -1,0 +1,22 @@
+﻿@model LoginUserModel
+@{
+    ViewBag.Title = "Вход";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+    <body>
+        @if(ViewData["LoginError"] is not null)
+        {
+            <p class="error">@ViewData["LoginError"]</p>
+        }
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+                    <p>Имя пользователя: @Html.TextBoxFor(m => m.UserName, "", new { type = "text" }) 
+            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "error" })</p>
+                    <p>Пароль: @Html.PasswordFor(m => m.Password) 
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })</p>
+                    <input type="submit" value="Вход" />
+    }
+    </body>
+</html>

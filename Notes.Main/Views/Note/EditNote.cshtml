@@ -1,0 +1,17 @@
+﻿@model GetNoteModel
+@{
+    ViewBag.Title = "Редактирование";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+    <body>
+    @using (Html.BeginForm("EditNote", "User", FormMethod.Post))
+    {
+        <div class="row"><p>Название заметки: </p>@Html.TextBoxFor(m => m.Name, "", new { type = "text" })</div>
+        <div class="row" style="vertical-align: top"><p>Текст заметки: </p><textarea id="Content" name="Content" style="width: 60%; height: 1000px;"> @Model.Content</textarea></div>
+        <div class="row">@Html.CheckBoxFor(m => m.IsPublic, "")<p>Публичная? (видна всем)</p></div>
+        <input type="submit" value="Сохранить изменения" />
+    }
+    </body>
+</html>

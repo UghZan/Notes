@@ -1,0 +1,22 @@
+﻿@model GetNoteModel
+<div class="model-div">
+    <p class="note-title">@Model.Name</p>
+    <p class="note-sub-title">@Model.CreateDate.ToString("g")</p>
+    <div class="inner-model-div">
+        <p class = "text">@Model.Content</p>
+    </div>
+    <div><p class = "note-sub-title">By @Model.AuthorName</p></div>
+    <div class="row" style="justify-content: flex-end;">
+        <a class="button note" href=@("/Note/ViewNote?id="+Model.Id)>
+            <span class="icon-holder"><img class="icon icon-default" src="~/img/eye.svg" /></span>
+            <span class="icon-holder"><img class="icon icon-hover" src="~/img/eye.svg" /></span>
+        </a>
+        @if (ViewData["UserName"] is not null && Model.AuthorName == ViewData["UserName"] as string)
+        {
+            <a class="button note" href=@("/Note/editnote?id="+Model.Id)>
+                <span class="icon-holder"><img class="icon icon-default" src="~/img/pencil.svg" /></span>
+                <span class="icon-holder"><img class="icon icon-hover" src="~/img/pencil.svg" /></span>
+            </a>
+        }
+    </div>
+</div>

@@ -1,0 +1,163 @@
+﻿h1{
+    text-align: center;
+}
+p.view-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: underline black
+}
+p.view-author {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: dimgray;
+}
+p.view-author {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: dimgray;
+}
+.view-div {
+    width: 60%;
+    height: 900px;
+    display: flex;
+    border: groove 2px black;
+    margin: auto;
+}
+.outer-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.model-div {
+    width: 300px;
+    min-height: 400px;
+    border: groove 2px black;
+    display: flex;
+    flex-flow: column;
+    margin: 10px;
+}
+.inner-model-div {
+    margin: 2px;
+    border: groove 1px gray;
+    flex: 1;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.main-title {
+    border: solid 2px black;
+}
+.sub-title {
+    border: solid 2px black;
+    background-color: darkgray
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto 50px;
+    height: 100vh
+}
+p{
+    font-size: 18px;
+    margin: 5px
+}
+p.note-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline black
+}
+p.note-sub-title {
+    font-size: 12px;
+    color: gray;
+}
+.side-bar {
+    border: solid 2px black;
+    justify-content: start;
+    display: flex;
+    flex-flow: column;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: limegreen;
+}
+
+.notes-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+.text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 14;
+    line-clamp: 14;
+    -webkit-box-orient: vertical;
+}
+a.button {
+    background-color: white;
+    outline: solid 2px black;
+    color: black;
+    font-size: 20px;
+    margin: 4px;
+}
+a.button:hover {
+    background-color: black;
+    outline: solid 3px black;
+    color: white;
+    font-size: 24px;
+    margin: 4px;
+}
+a.button.sidebar {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+a.button.note {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-holder {
+    display: block;
+    position: relative;
+}
+
+.icon-holder .icon {
+    position: absolute;
+    top: 7px;
+    left: 25%;
+}
+
+a.button:hover img.icon-default {
+    opacity: 0;
+}
+
+a.button:hover img.icon-hover {
+    opacity: 1.0;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+img.icon-hover {
+    opacity: 0;
+}
+
+img.icon-default {
+    opacity: 1.0;
+}
+

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Настройки аккаунта";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <div>
+        @if (TempData["ChangeMessage"] is not null)
+            {
+                        <p class="success">@TempData["ChangeMessage"]</p>
+            }
+            @{await Html.RenderPartialAsync("ChangeUsername");}
+            @{await Html.RenderPartialAsync("ChangePassword");}
+    </div>
+    </body>
+</html>

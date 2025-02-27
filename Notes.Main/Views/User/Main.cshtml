@@ -1,0 +1,20 @@
+﻿@model List<GetNoteModel>
+@{
+    ViewBag.Title = "Мои заметки";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="outer-div" style="height: 30px"> 
+        <a class="button" href="/User/AddNote">Новая заметка</a>
+    </div>
+    <h1>Мои заметки</h1>
+    <div class="notes-container">
+        @foreach (GetNoteModel getNoteModel in Model)
+        {
+            await Html.RenderPartialAsync("NoteView", getNoteModel);
+        }
+    </div>
+    </body>
+</html>
